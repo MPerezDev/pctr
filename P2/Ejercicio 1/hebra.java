@@ -1,10 +1,8 @@
+
 /**
  * @author Manuel Pérez Ruiz
- * 
- */
-
-/*
  * Clase hebra que incrementa nVueltas veces el valor de n.
+ * 
  */
 
 public class hebra extends Thread{

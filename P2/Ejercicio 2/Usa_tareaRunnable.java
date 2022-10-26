@@ -10,6 +10,11 @@
 
 public class Usa_tareaRunnable {
     
+    /**
+     * Método main de la clase Usa_tareaRunnable.
+     * @param args
+     * @param nVueltas número de vueltas que dará cada hilo.
+    */
     public static void main(String[] args){
         int nVueltas = 10000000;
         tareaRunnable h1 = new tareaRunnable(0, nVueltas);

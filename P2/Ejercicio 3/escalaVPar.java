@@ -1,8 +1,22 @@
 
+/**
+ * @author Manuel Pérez Ruiz
+ * Clase escalaVPar que escala un vector de enteros de forma paralela.
+ */
+
 public class escalaVPar{
+
+    /**
+     * @param tamanno tamaño máximo del vector.
+     */
 
     public static int tamanno = 1000000;
 
+    /**
+     * Método main de la clase escalaVPar.
+     * @param args
+     * @param vector vector de enteros.
+     */
     public static void main(String[] args) {
         int[] vector = new int[tamanno];
         for(int i = 0; i < vector.length; i++){
@@ -30,12 +44,27 @@ public class escalaVPar{
 
 }
 
+/**
+ * Clase hebra que escala un vector de enteros.
+ */
+
 class hebra extends Thread{
+
+    /**
+     * @param vector vector de enteros.
+     * @param escala factor de escala por la que se multiplicará el vector.
+     * @param inicio posición inicial del vector.
+     * @param fin posición final del vector.
+     */
 
     private int[] vector;
     private int escala;
     private int inicio;
     private int fin;
+
+    /**
+     * Método constructor de la clase hebra.
+     */
 
     public hebra(int[] vector, int escala, int inicio, int fin){
         this.vector = vector;
@@ -43,6 +72,10 @@ class hebra extends Thread{
         this.inicio = inicio;
         this.fin = fin;
     }
+
+    /**
+     * Método que escala el vector.
+     */
 
     public void run(){
         for(int i = inicio; i < fin; i++){

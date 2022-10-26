@@ -9,6 +9,12 @@
   */
 
 public class Usa_hebra {
+
+    /**
+     * Método main de la clase Usa_hebra.
+     * @param args
+     * @param nVueltas Número de vueltas que realizarán las hebras.
+     */
     
     public static void main(String[] args) {
         int nVueltas = 10000000;
