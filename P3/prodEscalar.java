@@ -1,7 +1,8 @@
 /**
  * @author Manuel Pérez Ruiz
- * 
+ * Ejercicio 1 - Práctica 3
  */
+ 
 
 
 public class prodEscalar {
@@ -18,14 +19,17 @@ public class prodEscalar {
      * @param args
      * @param vector1 vector de enteros.
      * @param vector2 vector de enteros.
+     * @param startTime tiempo de inicio del programa.
+     * @param endTime tiempo de finalización del programa.
      */
-    public static void main(String[] args) {
+
+     public static void main(String[] args) {
 
         int[] vector1 = new int[tamanno];
         int[] vector2 = new int[tamanno];
 
         for(int i = 0; i < tamanno; i++){
-            vector1[i] = 1;
+            vector1[i] = i+1;
             vector2[i] = i+1;
         }
 
@@ -39,7 +43,7 @@ public class prodEscalar {
 
 
         System.out.println("El resultado es: " + resultado);
-        System.out.println("Tiempo total: " + (endTime-startTime)/1e9 + " s");
+        System.out.println("Tiempo total: " + (endTime-startTime)/1e6 + " milisegundos");
     }
 
 }
