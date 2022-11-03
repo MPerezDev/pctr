@@ -3,8 +3,22 @@
  * Ejercicio 2 - Práctica 3
  */
 
+
+ /**
+  * Clase matVectorConcurrente que implementa la interfaz Runnable.
+  */
 public class matVectorConcurrente implements Runnable{
     
+    /**
+     * Atributos de la clase matVectorConcurrente.
+     * @param tamanno tamaño de la matriz y del vector.
+     * @param matriz matriz de enteros.
+     * @param vector vector de enteros.
+     * @param resultado vector de enteros.
+     * @param inicio inicio del vector.
+     * @param fin fin del vector.
+     */
+
     private static int tamanno = 10000;
     private static int[][] matriz = new int[tamanno][tamanno];
     private static int[] vector = new int[tamanno];
@@ -82,7 +96,7 @@ public class matVectorConcurrente implements Runnable{
                 resultado[j] = 0;
             }
 
-            Thread.sleep(2000);
+            Thread.sleep(5000);
 
         }
 

@@ -4,7 +4,21 @@
  * Ejercicio 1 - Práctica 3
  */
 
+/**
+ * Clase prodEscalarParalelo que hereda de la clase Thread.
+ */
 public class prodEscalarParalelo extends Thread {
+
+    /**
+     * @param tamanno tamaño de los vectores.
+     * @param resultado resultado de la multiplicación de los vectores.
+     * @param vector1 vector de enteros.
+     * @param vector2 vector de enteros.
+     * @param inicio inicio del vector.
+     * @param fin fin del vector.
+     * @param idHebra identificador de la hebra.
+     */
+
     
     private static int tamanno = 1000000;
     private static int[] vector1 = new int[tamanno];

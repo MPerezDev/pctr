@@ -3,11 +3,14 @@
  * Ejercicio 1 - Práctica 3
  */
  
-
+/**
+ * Clase prodEscalarParalelo.
+ */
 
 public class prodEscalar {
 
     /**
+     * Atributos de la clase prodEscalar.
      * @param tamanno tamaño de los vectores.
      * @param resultado resultado de la multiplicación de los vectores.
      */

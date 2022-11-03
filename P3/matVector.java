@@ -5,7 +5,18 @@ import java.lang.Math;
  * Ejercicio 2 - Práctica 3
  */
 
+/**
+ * Clase matVector.
+ */
 public class matVector{
+
+    /**
+     * Atributos de la clase matVector.
+     * @param tamanno tamaño de la matriz y del vector.
+     * @param matriz matriz de enteros.
+     * @param vector vector de enteros.
+     * @param resultado vector de enteros.
+     */
     
     private static int tamanno = 10000;
     private static int[][] matriz = new int[tamanno][tamanno];
