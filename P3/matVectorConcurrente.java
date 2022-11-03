@@ -11,14 +11,12 @@ public class matVectorConcurrente implements Runnable{
     private static int[] resultado = new int[tamanno];
     private int inicio;
     private int fin;
-    private int idHebra;
 
     /**
      * Método constructor de la clase matVectorConcurrente.
      */
-    public matVectorConcurrente(int idHebra, int inicio, int fin){
+    public matVectorConcurrente(int inicio, int fin){
 
-        this.idHebra = idHebra;
         this.inicio = inicio;
         this.fin = fin;
 
@@ -43,7 +41,7 @@ public class matVectorConcurrente implements Runnable{
      * @param resultado resultado de la multiplicación de la matriz por el vector.
      * @param hebras vector de hebras.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
             
         //Inicializamos la matriz
         for(int i = 0; i < tamanno; i++){
@@ -66,7 +64,7 @@ public class matVectorConcurrente implements Runnable{
             Thread[] hebras = new Thread[i];
             long startTime = System.nanoTime();
             for(int j = 0; j < i; j++){
-                hebras[j] = new Thread(new matVectorConcurrente(j, (j*tamanno)/i, ((j+1)*tamanno)/i));
+                hebras[j] = new Thread(new matVectorConcurrente((j*tamanno)/i, ((j+1)*tamanno)/i));
                 hebras[j].start();
             }
             for(int j = 0; j < i; j++){
@@ -78,11 +76,13 @@ public class matVectorConcurrente implements Runnable{
             }
             long endTime = System.nanoTime();
 
-            System.out.println("Tiempo de ejecución con " + i + " hebras: " + (endTime - startTime)/1e6 + " milisegundos.");
+            System.out.println("Tiempo de ejecución con " + i + " hebras: " + (endTime-startTime)/1e6 + " milisegundos.");
 
             for(int j = 0; j < tamanno; j++){
                 resultado[j] = 0;
             }
+
+            Thread.sleep(2000);
 
         }
 
