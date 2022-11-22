@@ -6,7 +6,7 @@ public class primosParalelos {
 
   public static void main(String[] args) throws Exception {
     long nPuntos     = Integer.parseInt(args[0]);
-    int  nTareas     = Runtime.getRuntime().availableProcessors();
+    int  nTareas     = 128;//Runtime.getRuntime().availableProcessors();
     long tVentana    = nPuntos/nTareas;
     long primosTotal = 0;
     long linf        = 0;
