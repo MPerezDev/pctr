@@ -54,7 +54,10 @@ public class integCallable implements Callable<Double>{
         area = (fin - inicio) * suma / n;
         return area;
     }
-    
+    /**
+     * Método main de la clase integCallable
+     * @param args
+     */
     public static void main(String[] args) {
         int n = 100000;
         int nTareas = 100;
