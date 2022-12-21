@@ -3,8 +3,9 @@
  * Clase CuentaCorriente. Cuenta corriente de un cliente.
  */
 
-public class cuentaCorriente {
 
+public class cuentaCorriente {
+    
     /**
      * @param saldo Saldo de la cuenta corriente.
      * @param numeroCuenta Número de cuenta corriente.
