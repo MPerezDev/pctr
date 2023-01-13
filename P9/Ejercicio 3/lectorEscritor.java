@@ -97,6 +97,7 @@ public class lectorEscritor {
         cerrojo.lock();
         try{
             escribiendo = false;
+            if(lectores == 0) condicionEscribiendo.signalAll();
             condicionLectores.signalAll();     
         }finally{
             cerrojo.unlock();
