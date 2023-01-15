@@ -19,7 +19,7 @@ public class tryFour extends Thread{
    */
 
   private int tipoHilo;
-	private static volatile int nVueltas = 10000;
+	private static volatile int nVueltas = 100000;
 	private static volatile int n = 0;
 	private static volatile boolean C1 = false;
 	private static volatile boolean C2 = false;
