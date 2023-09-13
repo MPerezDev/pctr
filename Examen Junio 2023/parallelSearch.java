@@ -19,7 +19,7 @@ public class parallelSearch {
         List<Integer> list = new ArrayList<>(LIST_SIZE);
 
         Random random = new Random();
-        for (int i = 0; i < LIST_SIZE; i++) {
+        for (int i = 0; i < LIST_SIZE / 4; i++) {
             list.add(random.nextInt(1000));
         }
 
