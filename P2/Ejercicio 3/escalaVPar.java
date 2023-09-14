@@ -82,4 +82,5 @@ class hebra extends Thread{
             vector[i] = vector[i] * escala;
         }
     }
+    
 }

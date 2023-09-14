@@ -31,17 +31,17 @@ public class ProductoEscalarDistribuido {
         MPI.COMM_WORLD.Scatter(vectorA, 0, unitSize, MPI.INT, recvbufer, 0, unitSize, MPI.INT, emisor);
         MPI.COMM_WORLD.Scatter(vectorB, 0, unitSize, MPI.INT, recvbufer2, 0, unitSize, MPI.INT, emisor);
         
-        
+        int aux2[] = new int[3];
 
         //Calculamos el producto escalar de los vectores, teniendo en cuenta que el proceso raíz también calcula 3 posiciones
         System.out.println("Proceso: " + rank + "Vector: [" + recvbufer[0] + ", " + recvbufer[1] + ", " + recvbufer[2] + "]");
         System.out.println("Proceso: " + rank + "Vector: [" + recvbufer2[0] + ", " + recvbufer2[1] + ", " + recvbufer2[2] + "]");
         for(int i=0; i<unitSize; i++){ 
-            aux[rank * unitSize + i] = recvbufer[i] * recvbufer2[i];
+            aux2[i] = recvbufer[i] * recvbufer2[i];
             
         }
 
-        MPI.COMM_WORLD.Gather(aux, 0, unitSize, MPI.INT, aux, 0, unitSize, MPI.INT, emisor);
+        MPI.COMM_WORLD.Gather(aux2, 0, unitSize, MPI.INT, aux, 0, unitSize, MPI.INT, emisor);
 
         if(rank==emisor){
             //Suma todos los elementos resultantes de la multiplicación de los vectores y los muestra por pantalla
