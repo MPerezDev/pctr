@@ -15,6 +15,7 @@ public class parallelSearch {
     private static final int LIST_SIZE = 1000000;
     private static final int THREADS = 4;
 
+    //Rellenar sublistas
     private static List<Integer> generateRandomList() {
         List<Integer> list = new ArrayList<>(LIST_SIZE);
 
@@ -26,6 +27,7 @@ public class parallelSearch {
         return list;
     }
 
+    //Ocurrencias de "number"
     private static int searchNumber(List<Integer> list, int number) {
         int count = 0;
         for (int i : list) {
@@ -48,7 +50,9 @@ public class parallelSearch {
         ExecutorService generationExecutor = Executors.newFixedThreadPool(THREADS);
         List<Future<List<Integer>>> generationFutures = new ArrayList<>();
 
+        //Genera la lista de aleatorios
         for (int i = 0; i < THREADS; i++) {
+            //Genera 1/4 de lista
             Future<List<Integer>> future = generationExecutor.submit(parallelSearch::generateRandomList);
             generationFutures.add(future);
         }

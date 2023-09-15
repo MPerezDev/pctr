@@ -14,17 +14,17 @@ public class sEstado implements iEstado {
     public int[] siguienteEstado(int[] v) throws RemoteException {
         int[] vCambio = new int[v.length];
 
-        System.out.println("Servidor ha recibido el vector: [" + v[0] + ", " + v[1] + ", " + v[2] + ", " + vCambio[3] + ", " + v[4] + ", " + v[5] + "]");
+        System.out.println("Servidor ha recibido el vector: [" + v[0] + ", " + v[1] + ", " + v[2] + ", " + v[3] + ", " + v[4] + ", " + v[5] + "]");
 
-        for (int i = 0; i < v.length - 1; i++) {
+        for (int i = 0; i < v.length; i++) {
 
             if(i == 0){
                 
-                vCambio[i] = 0 + v[i] + v[i + 1];
+                vCambio[i] = v[i] + v[i + 1];
 
-            }else if(i+1 == v.length - 1){
+            }else if(i == v.length - 1){
 
-                vCambio[i] = v[i-1] + v[i] + 0;
+                vCambio[i] = v[i-1] + v[i];
 
             }else{
 
