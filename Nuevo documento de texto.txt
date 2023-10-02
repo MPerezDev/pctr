@@ -1,0 +1,10 @@
+javac -cp .;%MPJ_HOME%/lib/mpj.jar sumMatDistribuida.java
+mpjrun.bat -np 5 sumMatDistribuida
+
+
+# Secuenciación para el lanzamiento de Servidor/Cliente
+Se abrirán 3 terminales independientes. Es importantísimo _no cerrar ninguna de ellas_.
+1. _Abra una terminal independiente_: javac *.java
+2. _En la misma terminal que el paso 1_: start rmiregisty & (Se abrirá una nueva terminal)
+3. _Abra otra terminal independiente_: java servidor
+4. _Abra otra terminal independiente_: java cliente

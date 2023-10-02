@@ -67,10 +67,8 @@ public class parallelSearch {
             e.printStackTrace();
         }
 
-        generationExecutor.shutdown();
 
         // Búsqueda paralela
-        ExecutorService searchExecutor = Executors.newFixedThreadPool(THREADS);
         List<Future<Integer>> searchFutures = new ArrayList<>();
 
         int sublistSize = LIST_SIZE / THREADS;
@@ -85,7 +83,7 @@ public class parallelSearch {
 
             List<Integer> sublist = generatedList.subList(startIndex, endIndex);
 
-            Future<Integer> future = searchExecutor.submit(() -> searchNumber(sublist, numberToSearch));
+            Future<Integer> future = generationExecutor.submit(() -> searchNumber(sublist, numberToSearch));
             searchFutures.add(future);
         }
 
@@ -100,8 +98,6 @@ public class parallelSearch {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        searchExecutor.shutdown();
 
         // Búsqueda secuencial
         int sequentialOccurrences = searchNumber(generatedList, numberToSearch);
