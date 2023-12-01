@@ -14,7 +14,7 @@ public class cEstado {
             Registry registro = LocateRegistry.getRegistry();
             iEstado interfaz = (iEstado) registro.lookup("Estado");
 
-            int[] v = {-1, 0, 3, -4, 0, 6};
+            int[] v = {1, 1, 1, 1, 1, 1};
 
             System.out.println("Vector X: " + java.util.Arrays.toString(v));
             System.out.println("Transformando remotamente...");
